@@ -1,17 +1,15 @@
 export const validate = (number) => {
-  let numberAsString = number.toString(10);
-  let power = numberAsString.length;
+  let array = [...number.toString(10)];
   let armstrong = 0;
 
-  for (let i=0; i < power; i++) {
-  	let digit = parseInt(numberAsString.charAt(i));
-  	armstrong += digit ** power;
+  for (let digit of array) {
+    armstrong += digit ** array.length;
   }
 
   return number === armstrong;
 
 /**
  * Esoteric one-liner that does the same:
-  return number === number.toString(10).split('').map(it => parseInt(it)).reduce((a,c,i,s) => a += c ** s.length, 0);
+ return number === [...number.toString(10)].reduce((a,c,_,s) => a+=c**s.length, 0);
   **/
 };
