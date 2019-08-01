@@ -1,5 +1,5 @@
-const GIGASECOND = 10**9
+const GIGA_MILLISECOND = 10**12
 
 export const gigasecond = (date) => {
-  return new Date(date.getTime() + GIGASECOND * 1000); // Date() value in milliseconds
+  return new Date(date.getTime() + GIGA_MILLISECOND);
 };
